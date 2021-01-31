@@ -39,7 +39,6 @@
                         thing. You can plan your bus trip and jump on board feeling completely relaxed.</p>
                 </div>
 
-
                 <div class="booking-form">
                     <h3>Explore By Bus</h3>
 
@@ -49,7 +48,7 @@
                                 <input class="inp-style" type="text" name="" placeholder="Dhaka">
                         </div>
                         <div class="input-group">
-                            <label" for="">From</label>
+                            <label" for="">To</label>
                                 <input class="inp-style" type="text" name="" placeholder="Chittagone">
                         </div>
                     </div>
@@ -64,12 +63,13 @@
                             <input class="inp-style" type="date" name="">
                         </div>
                     </div>
+                    <!-- Ticketing Count Part -->
                     <div class="inputs">
                         <div class="input-group f-class">
                             <div>
                                 <label for="">First Class ($150)</label>
                                 <input id="firstClass-count" class="inp-style inp-width" type="number" name=""
-                                    value="0">
+                                    value="0" readonly>
                             </div>
                             <div>
                                 <button onclick="handleticketChanges('firstClass',true)"
@@ -80,7 +80,7 @@
                         <div class="input-group f-class">
                             <div>
                                 <label for="">Economy ($100)</label>
-                                <input id="economy-count" class="inp-style inp-width" type="number" name="" value="0">
+                                <input id="economy-count" class="inp-style inp-width" type="number" name="" value="0" readonly>
                             </div>
                             <div>
                                 <button onclick="handleticketChanges('economy',true)"
@@ -90,6 +90,7 @@
                         </div>
 
                     </div>
+                    <!-- Calculation Part -->
                     <div class="calculations">
                         <div class="amount">
                             <div class="left">
@@ -114,7 +115,7 @@
                                 <h4>Total</h4>
                             </div>
                             <div class="right">
-                                <p id="grand-total">$00</p>
+                                <p class="grand-total">$00</p>
                             </div>
                         </div>
                     </div>
@@ -122,63 +123,17 @@
                 </div>
             </div>
         </div>
+        <!-- Confirmation Part Hidden -->
         <div id="confirmation-area" class="confirmation-pane container">
             <h1> Congratulations! </h1>
-            <h2>Your Booking Confirmed!</h2>
-            <p>Please follow the payment gateway and check your email for code and complete the payment process for your confirmation.</p>
+            <h2>Ticket Booking Confirmed!</h2>
+            <h2> Please make the payment of: <span class="grand-total">$00</span> </h2>
+            <p>Please follow the payment gateway and complete the payment process for the confirmation.</p>
         </div>
     </main>
 
-    <script>
+<script src="script.js"></script>
 
-        //counting the tickets 
-        function handleticketChanges(ticket, isIncrease) {
-            const ticketCount = getInputValue(ticket);
-
-            let ticketNewCount = ticketCount;
-            if (isIncrease == true) {
-                ticketNewCount = ticketCount + 1;
-            }
-            if (isIncrease == false && ticketCount > 0) {
-                ticketNewCount = ticketCount - 1;
-            }
-            document.getElementById(ticket + '-count').value = ticketNewCount;
-            calculateTotal(); //calling this function here to make a link between them
-        }
-
-        // calculating the prices of tickets
-        function calculateTotal() {
-            const firstClassCount = getInputValue('firstClass');
-            const economyCount = getInputValue('economy');
-
-            const totalPrice = firstClassCount * 150 + economyCount * 100;
-            document.getElementById('total-price').innerText = '$' + totalPrice;
-
-            const vat = Math.round(totalPrice * 0.1);
-            document.getElementById('vat-amount').innerText = '$' + vat;
-
-            const grandTotal = totalPrice + vat;
-            document.getElementById('grand-total').innerText = '$' + grandTotal;
-        }
-
-        // pairup the input values to reduces some similar lines
-        function getInputValue(ticket) {
-            const ticketInput = document.getElementById(ticket + '-count');
-            const ticketCount = parseInt(ticketInput.value);
-            return ticketCount;
-        }
-
-        //Book Now Button
-        const bookNowBtn = document.getElementById('book-now');
-        bookNowBtn.addEventListener('click', function () {
-            const bookingArea = document.getElementById('booking-area');
-            bookingArea.style.display = 'none';
-            const confirmationArea = document.getElementById('confirmation-area');
-            confirmationArea.style.display = 'block';
-        })
-
-        
-    </script>
 </body>
 
 </html>
