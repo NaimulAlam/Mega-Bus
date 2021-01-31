@@ -11,7 +11,6 @@ function handleticketChanges(ticket, isIncrease) {
     }
     document.getElementById(ticket + '-count').value = ticketNewCount;
     calculateTotal(); //calling this function here to make a link between them
-
 }
 
 // calculating the prices of tickets
@@ -28,7 +27,7 @@ function calculateTotal() {
     const grandTotal = totalPrice + vat;
     const grandTotalNum = document.getElementsByClassName('grand-total');
     //for loop to take both(more than one) class
-    for ( var i = 0; i < grandTotalNum.length; i++) {
+    for (var i = 0; i < grandTotalNum.length; i++) {
         grandTotalNum[i].innerText = '$' + grandTotal
     }
     return grandTotalNum;
