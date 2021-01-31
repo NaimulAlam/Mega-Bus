@@ -27,93 +27,105 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main>
 
-        <div class="booking-content">
-            <h1>Mega City Bus</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book.</p>
+        <div id="booking-area">
+            <div class="main-content container">
+                <div class="booking-content">
+                    <h1>Mega City Bus</h1>
+                    <p>Getting you from A to B stress free: thanks to real-time bus stop information, up-to-date and
+                        current
+                        bus schedules, helpful staff and friendly on-site bus drivers, you don't need to worry about a
+                        thing. You can plan your bus trip and jump on board feeling completely relaxed.</p>
+                </div>
+
+
+                <div class="booking-form">
+                    <h3>Explore By Bus</h3>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label" for="">From</label>
+                                <input class="inp-style" type="text" name="" placeholder="Dhaka">
+                        </div>
+                        <div class="input-group">
+                            <label" for="">From</label>
+                                <input class="inp-style" type="text" name="" placeholder="Chittagone">
+                        </div>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label" for="">Departure</label>
+                                <input class="inp-style" type="date" name="">
+                        </div>
+                        <div class="input-group">
+                            <label for="">Return</label>
+                            <input class="inp-style" type="date" name="">
+                        </div>
+                    </div>
+                    <div class="inputs">
+                        <div class="input-group f-class">
+                            <div>
+                                <label for="">First Class ($150)</label>
+                                <input id="firstClass-count" class="inp-style inp-width" type="number" name=""
+                                    value="0">
+                            </div>
+                            <div>
+                                <button onclick="handleticketChanges('firstClass',true)"
+                                    class="plus-minus-btn">+</button><button
+                                    onclick="handleticketChanges('firstClass',false)" class="plus-minus-btn">-</button>
+                            </div>
+                        </div>
+                        <div class="input-group f-class">
+                            <div>
+                                <label for="">Economy ($100)</label>
+                                <input id="economy-count" class="inp-style inp-width" type="number" name="" value="0">
+                            </div>
+                            <div>
+                                <button onclick="handleticketChanges('economy',true)"
+                                    class="plus-minus-btn">+</button><button
+                                    onclick="handleticketChanges('economy',false)" class="plus-minus-btn">-</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="calculations">
+                        <div class="amount">
+                            <div class="left">
+                                <p>Subtotal</p>
+                            </div>
+                            <div class="right">
+                                <p id="total-price">$00</p>
+                            </div>
+                        </div>
+
+                        <div class="amount">
+                            <div class="left">
+                                <p>Charge 10% VAT</p>
+                            </div>
+                            <div class="right">
+                                <p id="vat-amount">$00</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="amount">
+                            <div class="left">
+                                <h4>Total</h4>
+                            </div>
+                            <div class="right">
+                                <p id="grand-total">$00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="book-now" class="btn-style">Book Now</button>
+                </div>
+            </div>
         </div>
-
-
-        <div class="booking-form">
-            <h3>Explore By Bus</h3>
-
-            <div class="inputs">
-                <div class="input-group">
-                    <label" for="">From</label>
-                        <input class="inp-style" type="text" name="" placeholder="Dhaka">
-                </div>
-                <div class="input-group">
-                    <label" for="">From</label>
-                        <input class="inp-style" type="text" name="" placeholder="Chittagone">
-                </div>
-            </div>
-
-            <div class="inputs">
-                <div class="input-group">
-                    <label" for="">Departure</label>
-                        <input class="inp-style" type="date" name="">
-                </div>
-                <div class="input-group">
-                    <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
-                </div>
-            </div>
-            <div class="inputs">
-                <div class="input-group f-class">
-                    <div>
-                        <label for="">First Class ($150)</label>
-                        <input id="firstClass-count" class="inp-style inp-width" type="number" name="" value="0">
-                    </div>
-                    <div>
-                        <button onclick="handleticketChanges('firstClass',true)"
-                            class="plus-minus-btn">+</button><button onclick="handleticketChanges('firstClass',false)"
-                            class="plus-minus-btn">-</button>
-                    </div>
-                </div>
-                <div class="input-group f-class">
-                    <div>
-                        <label for="">Economy ($100)</label>
-                        <input id="economy-count" class="inp-style inp-width" type="number" name="" value="0">
-                    </div>
-                    <div>
-                        <button onclick="handleticketChanges('economy',true)" class="plus-minus-btn">+</button><button
-                            onclick="handleticketChanges('economy',false)" class="plus-minus-btn">-</button>
-                    </div>
-                </div>
-
-            </div>
-            <div class="calculations">
-                <div class="amount">
-                    <div class="left">
-                        <p>Subtotal</p>
-                    </div>
-                    <div class="right">
-                        <p id="total-price">$500</p>
-                    </div>
-                </div>
-
-                <div class="amount">
-                    <div class="left">
-                        <p>Charge 10% VAT</p>
-                    </div>
-                    <div class="right">
-                        <p id="tax-amount">$50</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="amount">
-                    <div class="left">
-                        <h4>Total</h4>
-                    </div>
-                    <div class="right">
-                        <p id="grand-total">$550</p>
-                    </div>
-                </div>
-            </div>
-            <button id="book-now" class="btn-style">Book Now</button>
+        <div id="confirmation-area" class="confirmation-pane container">
+            <h1> Congratulations! </h1>
+            <h2>Your Booking Confirmed!</h2>
+            <p>Please follow the payment gateway and check your email for code and complete the payment process for your confirmation.</p>
         </div>
     </main>
 
@@ -131,7 +143,22 @@
                 ticketNewCount = ticketCount - 1;
             }
             document.getElementById(ticket + '-count').value = ticketNewCount;
+            calculateTotal(); //calling this function here to make a link between them
+        }
 
+        // calculating the prices of tickets
+        function calculateTotal() {
+            const firstClassCount = getInputValue('firstClass');
+            const economyCount = getInputValue('economy');
+
+            const totalPrice = firstClassCount * 150 + economyCount * 100;
+            document.getElementById('total-price').innerText = '$' + totalPrice;
+
+            const vat = Math.round(totalPrice * 0.1);
+            document.getElementById('vat-amount').innerText = '$' + vat;
+
+            const grandTotal = totalPrice + vat;
+            document.getElementById('grand-total').innerText = '$' + grandTotal;
         }
 
         // pairup the input values to reduces some similar lines
@@ -140,8 +167,17 @@
             const ticketCount = parseInt(ticketInput.value);
             return ticketCount;
         }
-        
 
+        //Book Now Button
+        const bookNowBtn = document.getElementById('book-now');
+        bookNowBtn.addEventListener('click', function () {
+            const bookingArea = document.getElementById('booking-area');
+            bookingArea.style.display = 'none';
+            const confirmationArea = document.getElementById('confirmation-area');
+            confirmationArea.style.display = 'block';
+        })
+
+        
     </script>
 </body>
 
